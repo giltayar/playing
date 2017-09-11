@@ -1,7 +1,6 @@
 'use strict'
 const {describe, it, before, after} = require('mocha')
 const {expect} = require('chai')
-const retry = require('retry-as-promised')
 const webdriver = require('selenium-webdriver')
 require('chromedriver')
 const {By, until} = webdriver
@@ -17,7 +16,7 @@ describe('sample web app', function() {
   after(async () => await driver.quit())
 
   it('hello world document shows hello world', async () => {
-    const baseUrl = `http://${server.address().port}`
+    const baseUrl = `http://localhost:${server.address().port}`
 
     await driver.get(`${baseUrl}/hello-world-document.html`)
 
