@@ -1,0 +1,37 @@
+{
+  "name": "@applitools/???",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/???.js",
+  "files": [
+    "src",
+    "scripts"
+  ],
+  "scripts": {
+    "test": "mocha --no-timeouts 'test/**/*.test.js' && npm run eslint",
+    "eslint": "eslint '**/*.js'",
+    "publish": "npm version patch && npm publish",
+    "build:docker": "docker build . -t applitools/???",
+    "publish:docker": "docker tag applitools/??? applitools/???:${npm_package_version} && docker push applitools/???:${npm_package_version} && docker push applitools/???"
+  },
+  "keywords": [
+    "applitools",
+    "testing",
+    "browser",
+    "nodejs"
+  ],
+  "author": "Gil Tayar <gil.tayar@applitools.com>",
+  "license": "UNLICENSED",
+  "repository": {
+    "url": "https://github.com/applitools/rendering-grid",
+    "type": "git"
+  },
+  "dependencies": {
+    "debug": "^2.6.8"
+  },
+  "devDependencies": {
+    "eslint": "^4.2.0",
+    "eslint-plugin-prettier": "^2.1.2",
+    "prettier": "^1.5.2"
+  }
+}

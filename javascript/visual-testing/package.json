@@ -1,0 +1,26 @@
+{
+  "name": "visual-testing",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "mocha --no-timeouts 'test/**/*.test.js' && npm run eslint",
+    "eslint": "eslint '**/*.js'"
+  },
+  "author": "Gil Tayar <gil.tayar@applitools.com>",
+  "license": "ISC",
+  "repository": {
+    "url": "https://github.com/applitools/rendering-grid",
+    "type": "git"
+  },
+  "dependencies": {
+    "chromedriver": "^2.32.2",
+    "debug": "^2.6.8",
+    "eyes.selenium": "0.0.71",
+    "selenium-webdriver": "^3.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.2.0",
+    "eslint-plugin-prettier": "^2.1.2",
+    "prettier": "^1.5.2"
+  }
+}
