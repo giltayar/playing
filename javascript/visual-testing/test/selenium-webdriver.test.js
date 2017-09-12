@@ -23,5 +23,7 @@ describe('sample web app', function() {
     await driver.wait(until.elementLocated(By.tagName('h1')))
 
     expect(await (await driver.findElement(By.tagName('h1'))).getText()).to.equal('Hello, world')
+
+    console.log('Sdfsdfsdf')
   })
 })
