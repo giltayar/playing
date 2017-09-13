@@ -1,8 +1,10 @@
 'use strict'
+const {promisify: p} = require('util')
 const {describe, it, before, after} = require('mocha')
 const {expect} = require('chai')
 const webdriver = require('selenium-webdriver')
 require('chromedriver')
+require('geckodriver')
 const {By, until} = webdriver
 const app = require('../src/sample-web-app')()
 
@@ -15,15 +17,42 @@ describe('sample web app', function() {
   before(() => (driver = new webdriver.Builder().forBrowser('chrome').build()))
   after(async () => await driver.quit())
 
-  it('hello world document shows hello world', async () => {
-    const baseUrl = `http://localhost:${server.address().port}`
+  const baseUrl = () => `http://localhost:${server.address().port}`
 
-    await driver.get(`${baseUrl}/hello-world-document.html`)
+  it('hello world document shows hello world', async () => {
+    await driver.get(`${baseUrl()}/hello-world-document.html`)
 
     await driver.wait(until.elementLocated(By.tagName('h1')))
 
     expect(await (await driver.findElement(By.tagName('h1'))).getText()).to.equal('Hello, world')
+  })
 
-    console.log('Sdfsdfsdf')
+  it('should fill dismiss alert', async () => {
+    await driver.get(`${baseUrl()}/alert-popup.html`)
+
+    await driver.wait(until.elementLocated(By.tagName('button')))
+
+    expect((await (await driver.findElement(By.tagName('button'))).getText()).trim()).to.equal(
+      'Not Clicked!',
+    )
+
+    await (await driver.findElement(By.tagName('button'))).click()
+
+    const alert = await driver.wait(until.alertIsPresent(), 3000)
+    await alert.dismiss()
+
+    expect(await (await driver.findElement(By.tagName('button'))).getText()).to.equal('Clicked!')
+  })
+
+  it('should fill information in an authentication alert and continue', async () => {
+    await driver.get(`${baseUrl()}/needs-authentication`)
+
+    // await p(setTimeout)(3000)
+    // const alert = await driver.switchTo().alert()
+
+    const alert = await driver.wait(until.alertIsPresent(), 3000)
+    await alert.authenticateAs('theUserName', 'thePassword')
+
+    expect(await (await driver.findElement(By.tagName('h1'))).getText()).to.equal('Hello, world')
   })
 })

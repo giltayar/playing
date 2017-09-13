@@ -2,6 +2,7 @@
 const path = require('path')
 const express = require('express')
 const cookieParser = require('cookie-parser')
+const basicAuth = require('express-basic-auth')
 
 module.exports = () => {
   const app = express()
@@ -22,6 +23,14 @@ module.exports = () => {
   app.get('/list-cookies', (req, res) => {
     res.json(req.cookies || {})
   })
+
+  app.get(
+    '/needs-authentication',
+    basicAuth({users: {aUserName: 'aPassword'}, challenge: true}),
+    (req, res) => {
+      res.send('<html><body><h1>Hello, world</h2></body></html>')
+    },
+  )
 
   return app
 }
