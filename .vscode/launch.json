@@ -1,43 +1,60 @@
 {
-    "version": "0.2.0",
-    "configurations": [
-      {
-        "name": "mocha:visual-testing",
-        "type": "node",
-        "request": "launch",
-        "program": "${workspaceRoot}/javascript/visual-testing/node_modules/mocha/bin/_mocha",
-        "args": [
-          "-u",
-          "tdd",
-          "--timeout",
-          "999999",
-          "--colors",
-          "${workspaceRoot}/javascript/visual-testing/test/**/*.test.js"
-        ],
-        "internalConsoleOptions": "openOnSessionStart",
-        "console": "integratedTerminal"
-      },
-      {
-        "name": "mocha:node",
-        "type": "node",
-        "request": "launch",
-        "program": "${workspaceRoot}/javascript/node/node_modules/mocha/bin/_mocha",
-        "args": [
-          "-u",
-          "tdd",
-          "--timeout",
-          "999999",
-          "--colors",
-          "${workspaceRoot}/javascript/node/test/**/*.test.js"
-        ],
-        "internalConsoleOptions": "openOnSessionStart",
-        "console": "integratedTerminal"
-      },
-      {
-        "type": "node",
-        "request": "launch",
-        "name": "Launch Program",
-        "program": "${file}"
-      }
-    ]
-  }
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "mocha:visual-testing",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/javascript/visual-testing/node_modules/mocha/bin/_mocha",
+      "args": [
+        "-u",
+        "tdd",
+        "--timeout",
+        "999999",
+        "--colors",
+        "${workspaceRoot}/javascript/visual-testing/test/**/*.test.js"
+      ],
+      "internalConsoleOptions": "openOnSessionStart",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "mocha:node",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/javascript/node/node_modules/mocha/bin/_mocha",
+      "args": [
+        "-u",
+        "tdd",
+        "--timeout",
+        "999999",
+        "--colors",
+        "${workspaceRoot}/javascript/node/test/**/*.test.js"
+      ],
+      "internalConsoleOptions": "openOnSessionStart",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "java:visual-testing",
+      "type": "java",
+      "request": "launch",
+      "stopOnEntry": false,
+      "preLaunchTask": "java:verify:visual-testing",
+      "jdkPath": "${env:JAVA_HOME}/bin",
+      "cwd": "${workspaceRoot}/java/visual-testing",
+      "startupClass": "VisualTesting",
+      "sourcePath": [
+        "${workspaceRoot}/java/visual-testing/src/main/java"
+      ],
+      "classpath": [
+        "target/PlayingAround-1.0.jar"
+      ],
+      "internalConsoleOptions": "openOnFirstSessionStart"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Program",
+      "program": "${file}"
+    }
+  ]
+}

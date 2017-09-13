@@ -1,0 +1,23 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "taskName": "java:verify:visual-testing",
+      "type": "shell",
+      "command": "mvn -B verify",
+      "group": "build",
+      "options": {
+        "cwd": "${workspaceRoot}/java/visual-testing"
+      },
+      "problemMatcher": []
+    },
+    {
+      "taskName": "test",
+      "type": "shell",
+      "command": "mvn -B test",
+      "group": "test"
+    }
+  ]
+}
