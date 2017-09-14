@@ -1,32 +1,27 @@
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class VisualTesting {
     public static void main(String[] args) {
         System.out.println("Hello, world");
-		WebDriver driver = new ChromeDriver();
+        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver 2");
+        WebDriver driver = new ChromeDriver();
+        WebDriverWait wait = new WebDriverWait(driver, 3000);
 
-        String baseUrl = "http://demo.guru99.com/selenium/newtours/";
-        String expectedTitle = "Welcome: Mercury Tours";
-        String actualTitle = "";
+        driver.get("http://localhost:3000/alert-popup.html");
 
-        // launch Fire fox and direct it to the Base URL
-        driver.get(baseUrl);
+        driver.findElement(By.tagName("button")).click();
 
-        // get the actual value of the title
-        actualTitle = driver.getTitle();
+        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
 
-        /*
-         * compare the actual title of the page with the expected one and print
-         * the result as "Passed" or "Failed"
-         */
-        if (actualTitle.contentEquals(expectedTitle)){
-            System.out.println("Test Passed!");
-        } else {
-            System.out.println("Test Failed");
-        }
+        alert.dismiss();
 
-        //close Fire fox
+        wait.until(ExpectedConditions.textToBe(By.tagName("button"), "Clicked!")_;
+
         driver.close();
     }
 }

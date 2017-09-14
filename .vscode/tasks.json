@@ -4,12 +4,21 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "taskName": "java:verify:visual-testing",
+      "taskName": "mvn:exec:visual-testing",
       "type": "shell",
-      "command": "mvn -B verify",
+      "command": "mvn verify exec:java -Dexec.mainClass=VisualTesting",
       "group": "build",
       "options": {
         "cwd": "${workspaceRoot}/java/visual-testing"
+      },
+      "problemMatcher": []
+    },
+    {
+      "taskName": "javascript:run:sample-web-app",
+      "type": "shell",
+      "command": "npm start",
+      "options": {
+        "cwd": "${workspaceRoot}/javascript/visual-testing"
       },
       "problemMatcher": []
     },
