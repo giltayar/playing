@@ -23,10 +23,13 @@
       "problemMatcher": []
     },
     {
-      "taskName": "test",
+      "taskName": "mvn:test:visual-testing",
       "type": "shell",
-      "command": "mvn -B test",
-      "group": "test"
+      "command": "mvn test",
+      "group": "test",
+      "options": {
+        "cwd": "${workspaceRoot}/java/visual-testing"
+      }
     }
   ]
 }
