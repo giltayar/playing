@@ -1,7 +1,6 @@
 import org.apache.http.auth.UsernamePasswordCredentials;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInfo;
 import org.openqa.selenium.Alert;
@@ -27,7 +26,7 @@ class SeleniumTest {
     }
 
     @Test
-    void testAlertDismisall(TestInfo testInfo) {
+    void testAlertDismisall() {
       WebDriverWait wait = new WebDriverWait(driver, 2);
 
       driver.get("http://localhost:3000/alert-popup.html");
@@ -42,7 +41,7 @@ class SeleniumTest {
     }
 
     @Test
-    void testPassAuthentication(TestInfo testInfo) {
+    void testPassAuthentication() {
       WebDriverWait wait = new WebDriverWait(driver, 10);
 
       driver.get("http://localhost:3000/needs-authentication");
