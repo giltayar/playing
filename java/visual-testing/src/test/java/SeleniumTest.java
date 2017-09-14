@@ -1,3 +1,4 @@
+import org.apache.http.auth.UsernamePasswordCredentials;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
@@ -7,6 +8,7 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.security.Credentials;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -33,6 +35,21 @@ class SeleniumTest {
       driver.findElement(By.tagName("button")).click();
 
       Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+
+      alert.dismiss();
+
+      wait.until(ExpectedConditions.textToBe(By.tagName("button"), "Clicked!"));
+    }
+
+    @Test
+    void testPassAuthentication(TestInfo testInfo) {
+      WebDriverWait wait = new WebDriverWait(driver, 10);
+
+      driver.get("http://localhost:3000/needs-authentication");
+
+      Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+
+      alert.authenticateUsing((Credentials) new UsernamePasswordCredentials("aUserName", "aPassword"));
 
       alert.dismiss();
 
