@@ -18,6 +18,25 @@
       "console": "integratedTerminal"
     },
     {
+      "name": "mocha:hiding-images",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/javascript/hiding-images/node_modules/mocha/bin/_mocha",
+      "args": [
+        "-u",
+        "tdd",
+        "--timeout",
+        "999999",
+        "--colors",
+        "${workspaceRoot}/javascript/hiding-images/test/**/*.test.js"
+      ],
+      "internalConsoleOptions": "openOnSessionStart",
+      "env": {
+        "APPLITOOLS_APIKEY": "sdfasdff"
+      },
+      "console": "integratedTerminal"
+    },
+    {
       "name": "mocha:node",
       "type": "node",
       "request": "launch",
