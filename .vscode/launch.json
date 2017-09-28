@@ -2,6 +2,16 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "java",
+      "name": "java:visual-testing",
+      "request": "launch",
+      "mainClass": "VisualTesting",
+      "sourcePath": [
+        "${workspaceRoot}/java/visual-testing/src/main/java"
+      ],
+      "args": ""
+    },
+    {
       "name": "mocha:visual-testing",
       "type": "node",
       "request": "launch",
@@ -51,23 +61,6 @@
       ],
       "internalConsoleOptions": "openOnSessionStart",
       "console": "integratedTerminal"
-    },
-    {
-      "name": "java:visual-testing",
-      "type": "java",
-      "request": "launch",
-      "stopOnEntry": false,
-      "preLaunchTask": "java:verify:visual-testing",
-      "jdkPath": "${env:JAVA_HOME}/bin",
-      "cwd": "${workspaceRoot}/java/visual-testing",
-      "startupClass": "VisualTesting",
-      "sourcePath": [
-        "${workspaceRoot}/java/visual-testing/src/main/java"
-      ],
-      "classpath": [
-        "target/PlayingAround-1.0.jar"
-      ],
-      "internalConsoleOptions": "openOnFirstSessionStart"
     },
     {
       "type": "node",

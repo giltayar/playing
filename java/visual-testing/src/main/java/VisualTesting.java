@@ -20,7 +20,7 @@ public class VisualTesting {
 
         alert.dismiss();
 
-        wait.until(ExpectedConditions.textToBe(By.tagName("button"), "Clicked!")_;
+        wait.until(ExpectedConditions.textToBe(By.tagName("button"), "Clicked!"));
 
         driver.close();
     }
