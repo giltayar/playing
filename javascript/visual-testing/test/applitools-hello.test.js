@@ -26,7 +26,7 @@ describe.only('Applitools Hello App', function() {
       const button = await driver.findElement(By.tagName('button'))
 
       await button.click()
-      await eyes.checkWindow('Home page')
+      await eyes.checkWindow('Home page after clicking')
     })
   })
 })
