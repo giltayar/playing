@@ -13,7 +13,7 @@
     "mocha": "^4.0.1"
   },
   "scripts": {
-    "test": "mocha -r @std/esm"
+    "test": "mocha -r @std/esm test/test.mjs"
   },
   "keywords": [],
   "author": "",
