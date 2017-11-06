@@ -5,7 +5,7 @@ const {Eyes} = require('eyes.selenium')
 require('chromedriver')
 const {By} = webdriver
 
-describe.only('Applitools Hello App', function() {
+describe('Applitools Hello App', function() {
   let driver
   before(() => (driver = new webdriver.Builder().forBrowser('chrome').build()))
   after(async () => await driver.quit())

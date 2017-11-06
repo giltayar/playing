@@ -55,7 +55,7 @@ describe('sample web app', function() {
     expect(await (await driver.findElement(By.tagName('button'))).getText()).to.equal('Clicked!')
   })
 
-  it('should fill information in an authentication alert and continue', async () => {
+  it.skip('should fill information in an authentication alert and continue', async () => {
     await driver.get(`${baseUrl()}/needs-authentication`)
 
     // await p(setTimeout)(3000)
