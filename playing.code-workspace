@@ -8,6 +8,12 @@
 		},
 		{
 			"path": "javascript/io-code-js"
+		},
+		{
+			"path": "javascript/visual-testing"
+		},
+		{
+			"path": "javascript/visual-testing-with-jest"
 		}
 	],
 	"settings": {

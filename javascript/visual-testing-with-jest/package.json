@@ -1,0 +1,18 @@
+{
+  "name": "visual-testing-with-jest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chromedriver": "^2.34.0",
+    "eyes.selenium": "0.0.75",
+    "jest": "^22.0.3",
+    "selenium-webdriver": "^3.6.0"
+  }
+}

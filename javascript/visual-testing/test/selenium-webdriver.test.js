@@ -5,10 +5,10 @@ const webdriver = require('selenium-webdriver')
 const {Eyes} = require('eyes.selenium')
 const app = require('../src/sample-web-app')()
 require('chromedriver')
-require('geckodriver')
+// require('geckodriver')
 const {By, until} = webdriver
 
-describe('sample web app', function() {
+describe.only('sample web app', function() {
   let server
   let driver
   let eyes
@@ -17,14 +17,6 @@ describe('sample web app', function() {
 
   before(() => (driver = new webdriver.Builder().forBrowser('chrome').build()))
   after(async () => await driver.quit())
-
-  before(async () => {
-    eyes = new Eyes()
-    if (!process.env.APPLITOOLS_APIKEY) throw new Error('Set APPLITOOLS_APIKEY env var to your key')
-    eyes.setApiKey(process.env.APPLITOOLS_APIKEY)
-    await eyes.open(driver, 'Samp', 'Sample Web App Test', {width: 800, height: 600})
-  })
-  after(async () => await eyes.close())
 
   const baseUrl = () => `http://localhost:${server.address().port}`
 
@@ -55,11 +47,8 @@ describe('sample web app', function() {
     expect(await (await driver.findElement(By.tagName('button'))).getText()).to.equal('Clicked!')
   })
 
-  it.skip('should fill information in an authentication alert and continue', async () => {
+  it('should fill information in an authentication alert and continue', async () => {
     await driver.get(`${baseUrl()}/needs-authentication`)
-
-    // await p(setTimeout)(3000)
-    // const alert = await driver.switchTo().alert()
 
     const alert = await driver.wait(until.alertIsPresent(), 3000)
     await alert.authenticateAs('theUserName', 'thePassword')
