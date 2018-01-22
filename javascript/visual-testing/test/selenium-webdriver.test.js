@@ -8,7 +8,7 @@ require('chromedriver')
 // require('geckodriver')
 const {By, until} = webdriver
 
-describe.only('sample web app', function() {
+describe('sample web app', function() {
   let server
   let driver
   let eyes
