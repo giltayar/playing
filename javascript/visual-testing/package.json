@@ -22,12 +22,12 @@
   },
   "devDependencies": {
     "chai": "^4.1.2",
-    "chromedriver": "^2.33.2",
-    "eslint": "^4.11.0",
-    "eslint-plugin-prettier": "^2.3.1",
+    "chromedriver": "^2.35.0",
+    "eslint": "^4.16.0",
+    "eslint-plugin-prettier": "^2.5.0",
     "eyes.selenium": "^0.0.74",
     "mocha": "^3.5.3",
-    "prettier": "^1.8.2",
+    "prettier": "^1.10.2",
     "selenium-webdriver": "^3.6.0"
   }
 }

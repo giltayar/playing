@@ -13,7 +13,7 @@ describe('Applitools Hello App', function() {
   let eyes
   before(async () => {
     eyes = new Eyes()
-    eyes.setApiKey(process.env.APPLITOOLS_APIKEY)
+    eyes.setApiKey(process.env.APPLITOOLS_API_KEY)
     await eyes.open(driver, 'Test', 'Applitools')
   })
   after(async () => await eyes.close())

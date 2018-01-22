@@ -18,8 +18,9 @@ describe('Login and Registration', function() {
 
   before(async () => {
     eyes = new Eyes()
-    if (!process.env.APPLITOOLS_APIKEY) throw new Error('Set APPLITOOLS_APIKEY env var to your key')
-    eyes.setApiKey(process.env.APPLITOOLS_APIKEY)
+    if (!process.env.APPLITOOLS_API_KEY)
+      throw new Error('Set APPLITOOLS_API_KEY env var to your key')
+    eyes.setApiKey(process.env.APPLITOOLS_API_KEY)
     await eyes.open(driver, 'Sample', 'login-and-registration', {width: 400, height: 600})
   })
   after(async () => await eyes.close())
