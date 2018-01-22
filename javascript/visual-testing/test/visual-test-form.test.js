@@ -7,6 +7,11 @@ const app = require('../src/sample-web-app')()
 const {By} = webdriver
 
 describe('Login and Registration', function() {
+  const chromeCapabilities = webdriver.Capabilities.chrome()
+  if (process.env.CI) {
+    chromeCapabilities.set('chromeOptions', {args: ['--headless']})
+  }
+
   let server
   let driver
   let eyes

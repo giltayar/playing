@@ -6,6 +6,11 @@ require('chromedriver')
 const {By} = webdriver
 
 describe('Applitools Hello App', function() {
+  const chromeCapabilities = webdriver.Capabilities.chrome()
+  if (process.env.CI) {
+    chromeCapabilities.set('chromeOptions', {args: ['--headless']})
+  }
+
   let driver
   before(() => (driver = new webdriver.Builder().forBrowser('chrome').build()))
   after(async () => await driver.quit())

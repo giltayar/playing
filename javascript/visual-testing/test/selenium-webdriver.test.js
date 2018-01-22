@@ -8,14 +8,25 @@ require('chromedriver')
 // require('geckodriver')
 const {By, until} = webdriver
 
-describe('sample web app', function() {
+describe.only('sample web app', function() {
   let server
   let driver
   let eyes
   before(done => (server = app.listen(process.env.PORT || undefined, done)))
   after(() => server.close())
 
-  before(() => (driver = new webdriver.Builder().forBrowser('chrome').build()))
+  const chromeCapabilities = webdriver.Capabilities.chrome()
+  if (process.env.CI) {
+    chromeCapabilities.set('chromeOptions', {args: ['--headless']})
+  }
+
+  before(
+    () =>
+      (driver = new webdriver.Builder()
+        .forBrowser('chrome')
+        .withCapabilities(chromeCapabilities)
+        .build()),
+  )
   after(async () => await driver.quit())
 
   before(async () => {

@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "start": "node src/run-web-app.js",
-    "test": "mocha --no-timeouts 'test/**/*.test.js' && npm run eslint",
+    "test": "mocha  ${MOCHA_REPORTER} --no-timeouts 'test/**/*.test.js' && npm run eslint",
     "eslint": "eslint '**/*.js'"
   },
   "author": "Gil Tayar <gil.tayar@applitools.com>",
@@ -27,6 +27,7 @@
     "eslint-plugin-prettier": "^2.5.0",
     "eyes.selenium": "^0.0.74",
     "mocha": "^3.5.3",
+    "mocha-junit-reporter": "^1.16.0",
     "prettier": "^1.10.2",
     "selenium-webdriver": "^3.6.0"
   }
