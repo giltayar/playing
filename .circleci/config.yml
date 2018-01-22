@@ -21,11 +21,16 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
-      - run: cd javascript/visual-testing && npm install
+      - run: |
+        cd javascript/visual-testing
+        npm install
 
       - save_cache:
           paths:
             - cd javascript/visual-testing/node_modules
           key: v1-dependencies-{{ checksum "javascript/visual-testing/package-lock.json" }}
 
-      - run: cd javascript/visual-testing && npm test
+      - run: |
+        cd javascript/visual-testing
+        export APPLITOOLS_BATCH_ID=$CIRCLE_SHA1
+        npm test
