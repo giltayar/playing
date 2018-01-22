@@ -26,18 +26,18 @@ jobs:
       - checkout
 
       # Download and cache dependencies
-      - restore_cache:
-          keys:
-          - v1-dependencies-{{ checksum "javascript/visual-testing/package-lock.json" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
+      # - restore_cache:
+      #     keys:
+      #     - v1-dependencies-{{ checksum "javascript/visual-testing/package-lock.json" }}
+      #     # fallback to using the latest cache if no exact match is found
+      #     - v1-dependencies-
 
       - run: cd javascript/visual-testing && npm install
 
-      - save_cache:
-          paths:
-            - cd javascript/visual-testing/node_modules
-          key: v1-dependencies-{{ checksum "javascript/visual-testing/package-lock.json" }}
+      # - save_cache:
+      #     paths:
+      #       - cd javascript/visual-testing/node_modules
+      #     key: v1-dependencies-{{ checksum "javascript/visual-testing/package-lock.json" }}
 
       # run tests!
       - run: cd javascript/visual-testing && npm test
