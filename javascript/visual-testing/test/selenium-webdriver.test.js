@@ -17,6 +17,7 @@ describe.only('sample web app', function() {
 
   const chromeCapabilities = webdriver.Capabilities.chrome()
   if (process.env.CI) {
+    console.log('running headless mode...')
     chromeCapabilities.set('chromeOptions', {args: ['--headless']})
   }
 
