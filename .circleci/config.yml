@@ -22,9 +22,9 @@ jobs:
           - v1-dependencies-
 
       - run:
-        command: |
-          cd javascript/visual-testing
-          npm install
+          command: |
+            cd javascript/visual-testing
+            npm install
 
       - save_cache:
           paths:
@@ -32,7 +32,7 @@ jobs:
           key: v1-dependencies-{{ checksum "javascript/visual-testing/package-lock.json" }}
 
       - run:
-        command: |
-          cd javascript/visual-testing
-          export APPLITOOLS_BATCH_ID=$CIRCLE_SHA1
-          npm test
+          command: |
+            cd javascript/visual-testing
+            export APPLITOOLS_BATCH_ID=$CIRCLE_SHA1
+            npm test
