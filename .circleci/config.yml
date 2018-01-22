@@ -35,4 +35,5 @@ jobs:
           command: |
             cd javascript/visual-testing
             export APPLITOOLS_BATCH_ID=$CIRCLE_SHA1
+            echo $APPLITOOLS_BATCH_ID
             npm test
