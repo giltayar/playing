@@ -19,6 +19,7 @@ describe('Applitools Hello App', function() {
   before(async () => {
     eyes = new Eyes()
     eyes.setApiKey(process.env.APPLITOOLS_API_KEY)
+    eyes.setBatch('playing', process.env.APPLITOOLS_BATCH_ID)
     await eyes.open(driver, 'Test', 'Applitools')
   })
   after(async () => await eyes.close())
