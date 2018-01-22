@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "chai": "^4.1.2",
-    "chromedriver": "^2.35.0",
+    "chromedriver": "^2.34.1",
     "eslint": "^4.16.0",
     "eslint-plugin-prettier": "^2.5.0",
     "eyes.selenium": "^0.0.74",
