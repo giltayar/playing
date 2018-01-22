@@ -8,7 +8,7 @@ const {By} = webdriver
 
 describe('Login and Registration', function() {
   const chromeCapabilities = webdriver.Capabilities.chrome()
-  if (process.env.CI) {
+  if (process.env.CIRCLECI) {
     chromeCapabilities.set('chromeOptions', {args: ['--headless']})
   }
 
