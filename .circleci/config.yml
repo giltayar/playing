@@ -16,8 +16,8 @@ jobs:
 
     working_directory: ~/repo
     environment:
-      MOCHA_REPORTER: --reporter mocha-junit-reporter
-      MOCHA_FILE: $CIRCLE_TEST_REPORTS/junit/test-results.xml
+      - MOCHA_REPORTER: --reporter mocha-junit-reporter
+      - MOCHA_FILE: $CIRCLE_TEST_REPORTS/junit/test-results.xml
 
     steps:
       - checkout
