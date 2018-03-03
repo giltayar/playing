@@ -35,6 +35,7 @@ describe('sample web app', function() {
       throw new Error('Set APPLITOOLS_API_KEY env var to your key')
     eyes.setApiKey(process.env.APPLITOOLS_API_KEY)
     eyes.setBatch('playing', process.env.APPLITOOLS_BATCH_ID)
+
     await eyes.open(driver, 'Samp', 'Sample Web App Test', {width: 800, height: 600})
   })
   after(async () => await eyes.close())
