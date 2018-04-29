@@ -1,0 +1,12 @@
+{
+    "extends": ["standard", "standard-jsx"],
+    "plugins": [
+        "cypress"
+    ],
+    "env": {
+        "cypress/globals": true
+    },
+    "rules": {
+        "no-return-await": 0
+    }
+}

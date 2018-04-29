@@ -1,0 +1,7 @@
+{
+  "testFiles": "*_spec.*",
+  "integrationFolder": "tests/cypress/integration",
+  "screenshotsFolder": "tests/cypress/screenshots",
+  "videossFolder": "cypress/videoss",
+  "projectId": "e5xqr8"
+}
