@@ -17,6 +17,9 @@
 		},
 		{
 			"path": "javascript/cypress"
+		},
+		{
+			"path": "javascript/puppeteer"
 		}
 	],
 	"settings": {
