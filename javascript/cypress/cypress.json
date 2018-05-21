@@ -1,7 +1,10 @@
 {
   "testFiles": "*_spec.*",
-  "integrationFolder": "tests/cypress/integration",
-  "screenshotsFolder": "tests/cypress/screenshots",
-  "videossFolder": "cypress/videoss",
+  "integrationFolder": "test/cypress/integration",
+  "fixturesFolder": "test/cypress/fixtures",
+  "pluginsFile": "test/cypress/plugins",
+  "supportFile": "test/cypress/support",
+  "screenshotsFolder": "test/cypress/screenshots",
+  "videosFolder": "test/cypress/videos",
   "projectId": "e5xqr8"
 }

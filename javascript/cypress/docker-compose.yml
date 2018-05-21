@@ -1,0 +1,22 @@
+version: '3'
+services:
+  backend:
+    image: giltayar/realworld-frontend-testing-backend
+    environment:
+      PORT: 80
+      MONGODB_URI: db:27017
+      SECRET: "shhhh"
+    ports:
+      - "3001:80"
+    depends_on:
+        - db
+
+  frontend:
+    image: giltayar/realworld-frontend-testing
+    ports:
+      - "3000:80"
+
+  db:
+    image: mongo:3.4
+    expose:
+      - 27017
