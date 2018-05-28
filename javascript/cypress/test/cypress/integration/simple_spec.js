@@ -3,7 +3,7 @@ const {describe, it} = require('mocha')
 
 describe('Blog App', function () {
   it('should do stuff', () => {
-    const random = `1`
+    const random = '1' // `${Math.random() * 100000 | 0}`
     cy.visit('http://localhost:3000/register')
 
     cy.eyesOpen('blog app', 'blog app cypress for Kent C. Dodds', {width: 1024, height: 768})
@@ -18,9 +18,10 @@ describe('Blog App', function () {
 
     cy.get('.btn').click()
 
+    cy.contains('New Post')
     cy.eyesCheckWindow('home page after register')
 
-    cy.get('.container > .nav > :nth-child(2) > .nav-link').click()
+    cy.contains('New Post').click()
 
     cy.get('input[placeholder="Article Title"]')
     cy.eyesCheckWindow('new post page')
