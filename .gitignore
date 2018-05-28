@@ -60,3 +60,4 @@ typings/
 
 .DS_Store
 .esm-cache
+javascript/cypress/test/cypress/videos
