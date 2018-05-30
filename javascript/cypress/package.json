@@ -56,7 +56,7 @@
     "build:docker:frontend": "docker build . -t giltayar/realworld-frontend-testing",
     "build:docker:backend": "cp -R node-conduit-additions/ node_modules/conduit-node && docker build node_modules/conduit-node -t giltayar/realworld-frontend-testing-backend",
     "test": "npm run test:cypress && npm run eslint",
-    "test:cypress": "docker-compose kill && docker-compose rm -fsv && docker-compose up -d && cypress run ; docker-compose kill && docker-compose rm -fv",
+    "test:cypress": "docker-compose kill && docker-compose rm -fsv && docker-compose up -d && time cypress run ; docker-compose kill && docker-compose rm -fv",
     "cypress": "docker-compose kill && docker-compose rm -fsv && docker-compose up -d && cypress open ; docker-compose kill && docker-compose rm -fv",
     "eslint": "eslint"
   },
