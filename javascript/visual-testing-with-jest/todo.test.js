@@ -3,7 +3,7 @@ const {By, until} = webdriver
 const {Eyes} = require('eyes.selenium')
 require('chromedriver')
 
-describe.only('todo list', function() {
+describe('todo list', function() {
   jest.setTimeout(30000)
   let driver
   beforeAll(async () => (driver = await new webdriver.Builder().forBrowser('chrome').build()))

@@ -29,16 +29,6 @@ describe('sample web app', function() {
   )
   after(async () => await driver.quit())
 
-  before(async () => {
-    eyes = new Eyes()
-    if (!process.env.APPLITOOLS_API_KEY)
-      throw new Error('Set APPLITOOLS_API_KEY env var to your key')
-    eyes.setApiKey(process.env.APPLITOOLS_API_KEY)
-    eyes.setBatch('playing', process.env.APPLITOOLS_BATCH_ID)
-    await eyes.open(driver, 'Samp', 'Sample Web App Test', {width: 800, height: 600})
-  })
-  after(async () => await eyes.close())
-
   const baseUrl = () => `http://localhost:${server.address().port}`
 
   it('hello world document shows hello world', async () => {
@@ -47,8 +37,6 @@ describe('sample web app', function() {
     await driver.wait(until.elementLocated(By.tagName('h1')))
 
     expect(await (await driver.findElement(By.tagName('h1'))).getText()).to.equal('Hello, world')
-
-    await eyes.checkWindow('Hello world appears')
   })
 
   it('should fill dismiss alert', async () => {
