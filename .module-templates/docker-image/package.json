@@ -1,0 +1,30 @@
+{
+  "name": "@applitools/templatetemplate",
+  "version": "1.0.0",
+  "description": "",
+  "engines": {
+    "node": ">=8.6.0"
+  },
+  "scripts": {
+    "build": "npm run build:docker",
+    "build:docker": "docker build -t applitools/templatetemplate --build-arg NPM_FILE=`cat ~/.npmrc` .",
+    "prepublishOnly": "npm version patch",
+    "postpublish": "npm run publish:docker",
+    "publish:docker": "docker tag applitools/templatetemplate applitools/templatetemplate:${npm_package_version} && docker push applitools/templatetemplate:${npm_package_version} && docker push applitools/templatetemplate:latest",
+  },
+  "keywords": [
+    "applitools",
+    "testing",
+    "browser",
+    "grid",
+    "visual-testing",
+    "nodejs",
+    "javascript"
+  ],
+  "author": "Gil Tayar <gil.tayar@applitools.com>",
+  "license": "UNLICENSED",
+  "repository": {
+    "url": "https://github.com/applitools/rendering-grid",
+    "type": "git"
+  }
+}

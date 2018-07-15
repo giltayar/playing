@@ -1,0 +1,65 @@
+{
+  "name": "@applitools/templatetemplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/templatetemplate.js",
+  "engines": {
+    "node": ">=10.3.0"
+  },
+  "files": [
+    "helm",
+    "src",
+    "scripts"
+  ],
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "bin": {
+    "run-templatetemplate": "scripts/run-templatetemplate.js"
+  },
+  "scripts": {
+    "start": "scripts/run-templatetemplate.js",
+    "test": "npm run test:mocha && npm run eslint",
+    "test:mocha": "mocha --no-timeouts --trace-warnings 'test/unit/*.test.js' 'test/it/*.test.js' 'test/e2e/*.test.js'",
+    "eslint": "eslint '**/*.js'",
+    "build": "#",
+    "postbuild": "npm run build:docker",
+    "build:docker": "docker build -t applitools/templatetemplate --build-arg NPM_FILE=`cat ~/.npmrc` .",
+    "prepublishOnly": "npm version patch",
+    "postpublish": "npm run publish:docker",
+    "publish:docker": "docker tag applitools/templatetemplate applitools/templatetemplate:${npm_package_version} && docker push applitools/templatetemplate:${npm_package_version} && docker push applitools/templatetemplate:latest",
+    "deploy": "kdeploy deploy templatetemplate ${npm_package_version} -c worker -v ./node_modules/@applitools/rendering-grid-deployment ."
+  },
+  "keywords": [
+    "applitools",
+    "testing",
+    "browser",
+    "grid",
+    "visual-testing",
+    "nodejs",
+    "javascript"
+  ],
+  "author": "Gil Tayar <gil.tayar@applitools.com>",
+  "license": "UNLICENSED",
+  "repository": {
+    "url": "https://github.com/applitools/rendering-grid",
+    "type": "git"
+  },
+  "dependencies": {
+    "debug": "^3.1.0",
+    "express": "^4.16.2"
+  },
+  "devDependencies": {
+    "@applitools/docker-compose-testkit": "^1.0.0",
+    "@applitools/rendering-grid-deployment": "*",
+    "chai": "^4.1.2",
+    "docker-compose-mocha": "^1.1.0",
+    "eslint": "^5.0.1",
+    "eslint-plugin-mocha-no-only": "^1.0.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-prettier": "^2.6.1",
+    "mocha": "^5.2.0",
+    "node-fetch": "^1.7.3",
+    "prettier": "^1.5.2"
+  }
+}
