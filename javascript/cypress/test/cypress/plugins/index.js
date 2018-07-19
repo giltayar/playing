@@ -8,9 +8,35 @@
 // https://on.cypress.io/plugins-guide
 // ***********************************************************
 
-// This function is called when a project is opened or re-opened (e.g. due to
-// the project's config changing)
-require('@applitools/eyes.cypress')
+require('@applitools/eyes.cypress');
+const fetch = require('node-fetch');
 
-module.exports = (on, config) => {
+function uniq(arr) {
+  return Array.from(new Set(arr));
 }
+
+function getUrls() {
+  const sitemapUrl = 'http://a142332.hostedsitemap.com/4049686/urllist.txt';
+  const filters = [/\/blog/, /\/docs\//, /\.png/, /\.pdf/];
+
+  return fetch(sitemapUrl)
+    .then(res => res.text())
+    .then(text =>
+      uniq(
+        text
+          .split(/\n/g)
+          .filter(u => !filters.some(f => u.match(f)))
+          .map(u => {
+            let qpIndex = u.indexOf('?');
+            if (qpIndex > -1) {
+              return u.substring(0, qpIndex);
+            }
+            return u;
+          }),
+      ),
+    );
+}
+
+module.exports = async (on, _config) => {
+  on('task', {getUrls});
+};

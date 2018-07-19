@@ -5,10 +5,17 @@ describe('Blog App', function () {
   it('should do stuff', () => {
     const random = '1' // `${Math.random() * 100000 | 0}`
 
+    cy.eyesOpen({
+      appName: 'blog app',
+      testName: 'blog app cypress',
+      browser: [
+        {width: 1024, height: 768}
+      ],
+      showLogs: true,
+    })
+
     // Visit registration page
     cy.visit('http://localhost:3000/register')
-
-    cy.eyesOpen('blog app', 'blog app cypress', {width: 1024, height: 768})
 
     cy.eyesCheckWindow('register') // visual snapshot
 
