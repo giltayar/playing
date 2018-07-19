@@ -20,6 +20,9 @@
 		},
 		{
 			"path": "javascript/puppeteer"
+		},
+		{
+			"path": "javascript/foxdriver"
 		}
 	],
 	"settings": {
