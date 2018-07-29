@@ -4,11 +4,11 @@ describe('Applitools site', () => {
       appName: 'website',
       testName: 'Everything',
       browser: [
-        {width: 320, height: 1000},
-        {width: 480, height: 1000},
-        {width: 768, height: 1000},
-        {width: 992, height: 1000},
-        {width: 1200, height: 1000},
+        { width: 320, height: 1000 },
+        { width: 480, height: 1000 },
+        { width: 768, height: 1000 },
+        { width: 992, height: 1000 },
+        { width: 1200, height: 1000 },
       ],
       showLogs: true,
     });
@@ -16,11 +16,9 @@ describe('Applitools site', () => {
 
   it('Single test', () => {
     cy.task('getUrls').then(urls => {
-      urls.slice(0, 3).forEach(url => {
-        const u = url.replace('https://applitools.com', 'https://applitools-test.herokuapp.com');
-
-        cy.visit(u);
-        cy.eyesCheckWindow(u);
+      urls.forEach(url => {
+        cy.visit(url);
+        cy.eyesCheckWindow(url);
       });
     });
   });
