@@ -1,0 +1,41 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    run: test-google-pubsub-problem
+  name: test-google-pubsub-problem
+  namespace: production
+spec:
+  replicas: 20
+  selector:
+    matchLabels:
+      run: test-google-pubsub-problem
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        run: test-google-pubsub-problem
+    spec:
+      containers:
+      - image: giltayar/test-google-pubsub-problem
+        imagePullPolicy: Always
+        name: test-google-pubsub-problem
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: test-google-pubsub-problem
+                operator: Exists

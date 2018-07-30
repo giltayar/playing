@@ -23,6 +23,9 @@
 		},
 		{
 			"path": "javascript/foxdriver"
+		},
+		{
+			"path": "google-cloud"
 		}
 	],
 	"settings": {

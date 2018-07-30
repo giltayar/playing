@@ -1,0 +1,62 @@
+{
+  "name": "@applitools/test-google-pubsub-problem",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/test-google-pubsub-problem.js",
+  "engines": {
+    "node": ">=10.3.0"
+  },
+  "files": [
+    "src",
+    "scripts"
+  ],
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "bin": {
+    "test-google-pubsub-problem": "scripts/run-test-google-pubsub-problem.js",
+    "create-backing-pubsub-topics": "scripts/create-backing-pubsub-topics.js",
+    "create-bucket": "scripts/create-bucket.js",
+    "put-blob": "scripts/put-blob.js"
+  },
+  "scripts": {
+    "start": "scripts/run-test-google-pubsub-problem.js",
+    "test": "mocha --no-timeouts --trace-warnings 'test/unit/*.test.js' 'test/it/*.test.js' 'test/e2e/*.test.js' && npm run eslint",
+    "eslint": "eslint '**/*.js'",
+    "build": "#",
+    "postbuild": "npm run build:docker",
+    "prepublishOnly": "npm version patch",
+    "postpublish": "npm run publish:docker",
+    "build:docker": "docker build -t giltayar/test-google-pubsub-problem .",
+    "publish:docker": "docker push giltayar/test-google-pubsub-problem"
+  },
+  "keywords": [
+    "applitools",
+    "utility",
+    "nodejs",
+    "javascript"
+  ],
+  "author": "Gil Tayar <gil.tayar@applitools.com>",
+  "license": "UNLICENSED",
+  "repository": {
+    "url": "https://github.com/applitools/rendering-grid",
+    "type": "git"
+  },
+  "dependencies": {
+    "@google-cloud/pubsub": "^0.19.0",
+    "@google-cloud/storage": "^1.7.0",
+    "@rauschma/stringio": "^1.4.0",
+    "debug": "^3.1.0",
+    "uuid": "^3.3.2",
+    "yargs": "^10.0.3"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "eslint": "^5.0.1",
+    "eslint-plugin-mocha-no-only": "^1.0.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-prettier": "^2.6.1",
+    "mocha": "^5.2.0",
+    "prettier": "^1.5.2"
+  }
+}
