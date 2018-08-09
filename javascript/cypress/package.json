@@ -24,7 +24,7 @@
     "superagent-promise": "^1.1.0"
   },
   "devDependencies": {
-    "@applitools/eyes.cypress": "^1.5.19",
+    "@applitools/eyes.cypress": "^1.5.24",
     "@storybook/addon-actions": "^3.4.8",
     "@storybook/addon-links": "^3.4.8",
     "@storybook/addons": "^3.4.8",
@@ -36,7 +36,7 @@
     "chromedriver": "^2.40.0",
     "conduit-node": "git+ssh://git@github.com/gothinkster/node-express-realworld-example-app.git#ba04b70",
     "cross-env": "^5.2.0",
-    "cypress": "^3.0.2",
+    "cypress": "^3.0.3",
     "eslint": "^5.1.0",
     "eslint-plugin-mocha-no-only": "^1.0.0",
     "eslint-plugin-node": "^7.0.1",

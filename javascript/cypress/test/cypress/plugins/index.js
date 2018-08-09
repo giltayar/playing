@@ -25,6 +25,7 @@ function getUrls() {
       uniq(
         text
           .split(/\n/g)
+          .filter(u => !!u)
           .filter(u => !filters.some(f => u.match(f)))
           .map(u => {
             let qpIndex = u.indexOf('?');
@@ -34,7 +35,11 @@ function getUrls() {
             return u;
           }),
       ),
-    );
+    ).then(urls => {
+      console.log('@@@@GIL urls', urls.length)
+
+      return urls;
+    });
 }
 
 module.exports = async (on, _config) => {
