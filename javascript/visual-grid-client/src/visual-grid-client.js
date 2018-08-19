@@ -8,6 +8,7 @@ async function main(argv, {shouldExitOnError = false} = {}) {
     .help()
 
   const options = commandLineOptions.parse(argv)
+  console.log(options)
 }
 
 module.exports = main
