@@ -16,6 +16,9 @@
 			"path": "javascript/visual-testing-with-jest"
 		},
 		{
+			"path": "javascript/visual-grid-client"
+		},
+		{
 			"path": "javascript/cypress"
 		},
 		{
