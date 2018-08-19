@@ -41,7 +41,8 @@ describe('visual-grid-client test', function() {
       tag: 'first test',
       url: 'http://localhost/index.html',
       cdt: domNodesToCdt(
-        new JSDOM(fs.readFileSync(path.join(__dirname, 'resources/index.html'), 'utf-8')),
+        new JSDOM(fs.readFileSync(path.join(__dirname, 'resources/index.html'), 'utf-8')).window
+          .document,
       ),
       sizeMode: 'viewport',
       resourceContents: {
