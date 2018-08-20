@@ -7,7 +7,10 @@ async function main(argv, {shouldExitOnError = false} = {}) {
     .strict()
     .help()
 
-  const options = commandLineOptions.parse(argv)
+  commandLineOptions
+    .command(require('./async-performance'))
+    .help()
+    .parse(argv)
 }
 
 module.exports = main
