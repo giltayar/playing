@@ -23,7 +23,7 @@ module.exports = {
 
     await taskPumper({
       ...argv,
-      taskName: 'resolved-promises',
+      taskName: 'fetch',
       task: async ({runIndex, taskIndex}) => {
         return await retry(
           async () => {
