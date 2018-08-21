@@ -16,6 +16,10 @@ module.exports = {
     url: {
       string: true,
     },
+    body: {
+      boolean: true,
+      default: true,
+    },
   },
   handler: async argv => {
     const {server, address} = argv.url ? {} : await runServer(argv)
@@ -27,12 +31,14 @@ module.exports = {
       task: async ({runIndex, taskIndex}) => {
         return await retry(
           async () => {
-            const response = await fetch(`${url}?task=${runIndex}.${taskIndex}`)
+            const response = await fetch(
+              `${url}${url.includes('?') ? '&' : '?'}task=${runIndex}.${taskIndex}`,
+            )
 
             if (!response.ok)
               throw new Error(`bad response: ${response.status} (${await response.text()})`)
 
-            return await response.text()
+            return argv.body ? await response.buffer() : '<no body>'
           },
           {minTimeout: 100, maxTimeout: 100, retries: 10},
         )

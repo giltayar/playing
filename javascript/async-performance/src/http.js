@@ -31,7 +31,7 @@ module.exports = {
           async () => {
             await new Promise((resolve, reject) => {
               const req = (protocol === 'http:' ? http : https).request(
-                `${url}?task=${runIndex}.${taskIndex}`,
+                `${url}${url.includes('?') ? '&' : '?'}task=${runIndex}.${taskIndex}`,
                 res => {
                   const buffers = []
                   res.on('error', reject)

@@ -27,7 +27,7 @@ async function taskPumper({task, count, runs, taskName, verbose: verboseLevel, t
       percentile(durations, 90),
       percentile(durations, 99),
       numberOfErrors ? ', errs(%): ' : '',
-      numberOfErrors && ((100 * numberOfErrors) / count).toFixed(),
+      numberOfErrors ? ((100 * numberOfErrors) / count).toFixed() : '',
     )
   }
 
