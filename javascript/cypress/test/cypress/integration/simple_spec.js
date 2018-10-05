@@ -9,7 +9,9 @@ describe('Blog App', function () {
       appName: 'blog app',
       testName: 'blog app cypress',
       browser: [
-        {width: 1024, height: 768}
+        {width: 1024, height: 768},
+        {width: 3000, height: 1000},
+        {width: 800, height: 600, name: 'firefox'}
       ],
       showLogs: true,
     })
