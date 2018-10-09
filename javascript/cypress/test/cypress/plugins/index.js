@@ -8,7 +8,6 @@
 // https://on.cypress.io/plugins-guide
 // ***********************************************************
 
-require('@applitools/eyes.cypress');
 const fetch = require('node-fetch');
 
 function uniq(arr) {
@@ -45,3 +44,5 @@ function getUrls() {
 module.exports = async (on, _config) => {
   on('task', {getUrls});
 };
+
+require('@applitools/eyes.cypress')(module)
