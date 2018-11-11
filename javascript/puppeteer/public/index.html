@@ -8,6 +8,9 @@
 <body>
   <h1>Calculator</h1>
   <div id="main"></div>
-  <script src="bundle.js"></script>
+  <script>
+    fetch('http://localhost:3000/kundle.js').then(res => res.ok ? res.text() : res.statusText, err => err.toString()).then(x => console.log('fetch:', x.slice(0, 1000)))
+  </script>
+  <script src="http://lalala/bundle.js"></script>
 </body>
 </html>

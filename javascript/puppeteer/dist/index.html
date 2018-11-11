@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Calculator</h1>
+  <div id="main"></div>
+  <script>
+    fetch('http://localhost:3000/kundle.js').then(res => res.ok ? res.text() : res.statusText, err => err.toString()).then(x => console.log('fetch:', x.slice(0, 1000)))
+  </script>
+  <script src="http://lalala/bundle.js"></script>
+</body>
+</html>

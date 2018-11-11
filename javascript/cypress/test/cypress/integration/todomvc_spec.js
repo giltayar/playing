@@ -5,18 +5,28 @@ describe(`TodoMVC using Cypress`, function () {
   it('can add todos and then delete them', () => {
     cy.visit('http://todomvc.com/examples/react/#/')
 
+    cy.eyesOpen({
+      appName: 'todomvc dom diff check',
+      testName: 'can add todos and then delete them',
+      browser: [
+        {width: 1280, height: 1024}
+      ],
+    })
+
+    cy.eyesCheckWindow('initial')
+
     cy.get('.new-todo').type('Cook dinner{enter}')
 
-    cy.get('.view > label').should('have.text', 'Cook dinner')
+    cy.eyesCheckWindow('added todo')
 
     cy.get('.new-todo').type('Clean house{enter}').then(() => {debugger})
 
-    cy.get('.view > label').eq(1).should('have.text', 'Clean house')
+    cy.eyesCheckWindow('added another')
 
     cy.get('.toggle').eq(1).click()
 
-    cy.contains('1 item left').should('exist')
+    cy.eyesCheckWindow('toggled second todo')
 
-    cy.contains('Clear completed')
+    cy.eyesClose()
   })
 })
