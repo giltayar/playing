@@ -15,7 +15,7 @@ describe('Applitools site', () => {
     });
   });
 
-  it.only('Single test', () => {
+  it('Single test', () => {
     cy.task('getUrls').then(urls => {
       console.log('@@@GIL all urls', urls)
       urls.slice(0, 30).forEach((url, i) => {
