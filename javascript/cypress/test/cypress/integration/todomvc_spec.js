@@ -1,7 +1,7 @@
 'use strict'
 const {describe, it} = require('mocha')
 
-describe(`TodoMVC using Cypress`, function () {
+describe.skip(`TodoMVC using Cypress`, function () {
   it('can add todos and then delete them', () => {
     cy.visit('http://todomvc.com/examples/react/#/')
 

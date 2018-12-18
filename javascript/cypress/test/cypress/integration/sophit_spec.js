@@ -1,4 +1,4 @@
-describe('Hello world', () => {
+describe.skip('Hello world', () => {
 
   const url = 'https://theintercept.com/privacy-policy/' // 'https://www.wipro.com/analytics/'
   it('works', () => {

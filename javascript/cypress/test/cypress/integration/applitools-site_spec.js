@@ -1,4 +1,4 @@
-describe('Applitools site', () => {
+describe.skip('Applitools site', () => {
   beforeEach(() => {
     cy.eyesOpen({
       appName: 'website',

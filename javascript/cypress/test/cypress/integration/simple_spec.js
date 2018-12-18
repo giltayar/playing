@@ -1,7 +1,7 @@
 'use strict'
 const {describe, it} = require('mocha')
 
-describe('Blog App', function () {
+describe.skip('Blog App', function () {
   it('should do stuff', () => {
     const random = '1' // `${Math.random() * 100000 | 0}`
 
