@@ -24,7 +24,7 @@
     "superagent-promise": "^1.1.0"
   },
   "devDependencies": {
-    "@applitools/eyes.cypress": "^3.2.22",
+    "@applitools/eyes.cypress": "^3.3.15",
     "@storybook/addon-actions": "^3.4.11",
     "@storybook/addon-links": "^3.4.11",
     "@storybook/addons": "^3.4.11",
