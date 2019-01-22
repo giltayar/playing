@@ -6,5 +6,6 @@
   "supportFile": "test/cypress/support",
   "screenshotsFolder": "test/cypress/screenshots",
   "videosFolder": "test/cypress/videos",
-  "projectId": "e5xqr8"
+  "projectId": "e5xqr8",
+  "watchForFileChanges": false
 }
