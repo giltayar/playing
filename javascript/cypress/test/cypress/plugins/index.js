@@ -45,4 +45,4 @@ module.exports = async (on, _config) => {
   on('task', {getUrls});
 };
 
-require('@applitools/eyes.cypress')(module)
+require('@applitools/eyes-cypress')(module)
