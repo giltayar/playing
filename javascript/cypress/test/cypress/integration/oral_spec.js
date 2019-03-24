@@ -3,7 +3,7 @@ describe('Hello world', () => {
     cy.eyesOpen({
     appName: 'Oral',
     testName: 'Service page regression tests',
-    browser: {width: 1024, height: 768, name: 'chrome'}
+    browser: [{width: 1024, height: 768, name: 'chrome'}, {width: 1024, height: 768, name: 'firefox'},{width: 1024, height: 768, name: 'ie'}]
     });
 
     cy.visit('https://beta.oral.fi/palvelut/hammaskiven-poisto/');
