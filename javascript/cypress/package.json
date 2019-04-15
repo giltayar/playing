@@ -8,11 +8,11 @@
     "node": ">=8.6.0"
   },
   "dependencies": {
-    "history": "^4.6.3",
+    "history": "^4.9.0",
     "marked": "^0.4.0",
     "prop-types": "^15.7.2",
-    "react": "^16.8.3",
-    "react-dom": "^16.8.3",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "react-redux": "^5.1.1",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
@@ -24,11 +24,11 @@
     "superagent-promise": "^1.1.0"
   },
   "devDependencies": {
-    "@applitools/eyes-cypress": "^3.5.6",
-    "@storybook/addon-actions": "^3.4.11",
-    "@storybook/addon-links": "^3.4.11",
-    "@storybook/addons": "^3.4.11",
-    "@storybook/react": "^3.4.11",
+    "@applitools/eyes-cypress": "^3.6.3",
+    "@storybook/addon-actions": "^3.4.12",
+    "@storybook/addon-links": "^3.4.12",
+    "@storybook/addons": "^3.4.12",
+    "@storybook/react": "^3.4.12",
     "babel-core": "^6.26.3",
     "babel-runtime": "^6.26.0",
     "chai": "^4.2.0",
@@ -36,8 +36,8 @@
     "chromedriver": "^2.46.0",
     "conduit-node": "git+ssh://git@github.com/gothinkster/node-express-realworld-example-app.git#ba04b70",
     "cross-env": "^5.2.0",
-    "cypress": "^3.1.5",
-    "eslint": "^5.14.1",
+    "cypress": "^3.2.0",
+    "eslint": "^5.16.0",
     "eslint-plugin-mocha-no-only": "^1.1.0",
     "eslint-plugin-node": "^7.0.1",
     "eslint-plugin-prettier": "^2.7.0",
@@ -47,7 +47,7 @@
     "prettier": "^1.16.4",
     "react-scripts": "^1.1.5",
     "selenium-webdriver": "^3.0.0",
-    "storybook-react-router": "^1.0.2"
+    "storybook-react-router": "^1.0.5"
   },
   "scripts": {
     "start": "docker-compose up",

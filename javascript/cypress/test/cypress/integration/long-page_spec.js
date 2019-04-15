@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 'use strict'
-const height = 7000
+const height = 1000
 const width = 1000
 
 Cypress.config('eyesTimeout', 1800000)
@@ -16,6 +16,7 @@ describe('checkbox check', function() {
       batchName: test,
       browser: [
         {width: 1024, height: 768, name: 'chrome'},
+        {width: 1024, height: 768, name: 'firefox'},
         {width: 1024, height: 768, name: 'ie11'},
         {width: 1024, height: 768, name: 'ie10'},
         {width: 1024, height: 768, name: 'edge'},
