@@ -1,0 +1,17 @@
+{
+  "name": "eyes-selenium-vg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@applitools/eyes-selenium": "^4.14.1",
+    "chromedriver": "^2.46.0",
+    "selenium-webdriver": "^3.6.0"
+  }
+}
