@@ -16,7 +16,12 @@ describe('checkbox check', function() {
         {width: 1024, height: 768, name: 'chrome'},
         {width: 1800, height: 1200, name: 'chrome'},
         {width: 1024, height: 768, name: 'firefox'},
+        {width: 1024, height: 768, name: 'ie'},
         {width: 800, height: 600, name: 'ie'},
+        {width: 1024, height: 768, name: 'ie10'},
+        {width: 800, height: 600, name: 'ie10'},
+        {width: 1024, height: 768, name: 'edge'},
+        {width: 800, height: 600, name: 'edge'},
       ],
       sendDom: false,
     })

@@ -4,9 +4,11 @@
 describe('Slack', function() {
   it('slack', () => {
 
-    const test = 'Slack messages'
+    const test = 'Slack messages of DC11D3CCF'
 
-    cy.visit(`https://applitools.slack.com`)
+    cy.viewport(1024, 768)
+
+    cy.visit(`https://slack.com/`)
 
     cy.eyesOpen({
       appName: test, // progress-example-standard
@@ -20,7 +22,7 @@ describe('Slack', function() {
         // {width: 2048, height: 1024, name: 'chrome'},
         // {width: 1900, height: 1800, name: 'chrome'},
         // {width: 1024, height: 768, name: 'ie'},
-        {width: 1024, height: 768, name: 'edge'},
+        // {width: 1024, height: 768, name: 'edge'},
         // {width: 700, height: 500, name: 'edge'},
         // {width: 800, height: 600, name: 'edge'},
         // {deviceName: 'iPhone X', screenOrientation: 'portrait'},
@@ -30,14 +32,19 @@ describe('Slack', function() {
       ],
     })
 
+    cy.get('.u-margin-bottom--flush > a').click()
+
+    cy.get('#domain').type('applitools{enter}')
+
     cy.get('#email').type('gil.tayar@applitools.com')
     cy.get('#password').type(Cypress.env('SLACK_PASSWORD'))
 
     cy.get('#signin_btn').click()
 
-    cy.get('#msg_input > .ql-editor > p', {timeout: 10000})
+    cy.contains('general', {timeout: 20000}).click({force: true})
 
-    cy.eyesCheckWindow('messages')
+    cy.wait(10000)
+    cy.eyesCheckWindow({tag: 'messages', sizeMode: 'viewport'})
 
     cy.eyesClose()
   })
