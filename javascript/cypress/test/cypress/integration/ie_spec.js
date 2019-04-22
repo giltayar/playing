@@ -6,9 +6,10 @@ const width = 1000
 Cypress.config('eyesTimeout', 1800000)
 
 describe('ie rendering', function() {
-  const test = `ie long page height ${width}x${height}`
+  const urlToCheck = 'https://www.lidl.com/'
+  const test = `ie test ${urlToCheck}`
   it('should be all right', () => {
-    cy.visit(`https://applitools-sample-web-app-testkit.surge.sh/long-page.html?height=${height}&width=${width}`)
+    cy.visit(urlToCheck)
 
     cy.eyesOpen({
       appName: test,
@@ -30,15 +31,13 @@ describe('ie rendering', function() {
       ],
     })
 
-    cy.eyesCheckWindow({tag: 'long page 1'})
-    cy.eyesCheckWindow({tag: 'long page 1 region', sizeMode: 'selector', selector: '#long'})
-    cy.eyesCheckWindow({tag: 'long page 1 viewport', sizeMode: 'viewport'})
+    cy.eyesCheckWindow({tag: 'page 1', sendDom: false})
+    cy.eyesCheckWindow({tag: 'page 1 region', sizeMode: 'selector', selector: 'header', sendDom: false})
+    cy.eyesCheckWindow({tag: 'page 1 viewport', sizeMode: 'viewport', sendDom: false})
 
-    cy.visit(`https://applitools-sample-web-app-testkit.surge.sh/long-page.html?height=${height}&width=${width}&top=100&left=100`)
-    cy.eyesCheckWindow({tag: 'long page 2'})
-    cy.eyesCheckWindow({tag: 'long page 2 region', sizeMode: 'selector', selector: '#long'})
-    cy.eyesCheckWindow({tag: 'long page 2 viewport', sizeMode: 'viewport'})
-
+    cy.eyesCheckWindow({tag: 'page 2', sendDom: false})
+    cy.eyesCheckWindow({tag: 'page 2 region', sizeMode: 'selector', selector: 'header', sendDom: false})
+    cy.eyesCheckWindow({tag: 'page 2 viewport', sizeMode: 'viewport', sendDom: false})
 
     cy.eyesClose()
 
