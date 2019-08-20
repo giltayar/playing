@@ -8,5 +8,6 @@
   "videosFolder": "test/cypress/videos",
   "projectId": "e5xqr8",
   "watchForFileChanges": false,
-  "eyesTimeout": 180000
+  "eyesTimeout": 180000,
+  "pageLoadTimeout": 20000
 }

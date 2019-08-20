@@ -1,0 +1,15 @@
+{
+  "name": "image-comparison",
+  "version": "1.0.0",
+  "description": "",
+  "main": "image-comparison.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@applitools/eyes-images": "^4.12.6"
+  }
+}
