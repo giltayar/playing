@@ -21,7 +21,8 @@ async function compareImages(name = 'Compare images', ...images) {
 }
 
 async function main() {
-  const [expected, actual] = process.argv.slice(2)
+  const [expected, actual, name] = process.argv.slice(2)
+
   if (fs.statSync(expected).isFile() && fs.statSync(actual).isFile()) {
     return await compareImages(path.basename(expected), expected, actual)
   }
@@ -38,7 +39,7 @@ async function main() {
     console.log('working on', expectedFile, '...')
 
     try {
-      await compareImages(expectedFile, path.resolve(expected, expectedFile), actualFile)
+      await compareImages(name + ":" + expectedFile, path.resolve(expected, expectedFile), actualFile)
 
       console.log('same')
     } catch(err) {
