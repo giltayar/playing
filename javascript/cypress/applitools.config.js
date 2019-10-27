@@ -1,5 +1,5 @@
 
 module.exports = {
-  showLogs: true,
-  sendDom: true,
+  showLogs: false,
+  sendDom: false,
 }
