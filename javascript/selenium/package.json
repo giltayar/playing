@@ -1,0 +1,50 @@
+{
+  "name": "@applitools/selenium",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/selenium.js",
+  "engines": {
+    "node": ">=10.3.0"
+  },
+  "files": [
+    "src"
+  ],
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "scripts": {
+    "test": "npm run test:mocha && npm run eslint",
+    "test:mocha": "mocha --no-timeouts --exit 'test/unit/*.test.js' 'test/it/*.test.js'",
+    "eslint": "eslint '**/*.js'"
+  },
+  "keywords": [
+    "applitools",
+    "testing",
+    "browser",
+    "grid",
+    "visual-testing",
+    "nodejs",
+    "javascript"
+  ],
+  "author": "Gil Tayar <gil.tayar@applitools.com>",
+  "license": "UNLICENSED",
+  "repository": {
+    "url": "https://github.com/applitools/rendering-grid",
+    "type": "git"
+  },
+  "dependencies": {
+    "chromedriver": "^79.0.0",
+    "debug": "^4.1.1",
+    "geckodriver": "^1.19.1",
+    "selenium-webdriver": "^4.0.0-alpha.5"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-mocha-no-only": "^1.1.0",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "mocha": "^6.2.2",
+    "prettier": "^1.19.1"
+  }
+}

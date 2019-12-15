@@ -9,8 +9,8 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@applitools/eyes-cypress": "^3.8.10",
-    "cypress": "^3.5.0"
+    "@applitools/eyes-cypress": "^3.8.20",
+    "cypress": "^3.6.1"
   },
   "scripts": {},
   "keywords": [],

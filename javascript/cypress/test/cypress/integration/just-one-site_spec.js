@@ -10,7 +10,7 @@ const {describe, it} = require('mocha')
 // const urlToCheck = 'https://www.airbnb.com/'
 // const urlToCheck = 'https://www.lidl.com/products?category=OCI1000039&sort=productAtoZ'
 // const urlToCheck = 'https://www.wikipedia.org'
-const urlToCheck = 'https://en.wikipedia.org/wiki/Trademark_symbol'
+// const urlToCheck = 'https://en.wikipedia.org/wiki/Trademark_symbol'
 // const urlToCheck = 'http://example.com'
 // const urlToCheck = 'https://edition.cnn.com'
 // const urlToCheck = 'https://www.autogravity.com/inventory?page=0&query=%7B%22bodyStyles%22%3A%5B%7B%22label%22%3A%22SUV%22%2C%22queryValue%22%3A%22SUV%22%7D%5D%2C%22conditions%22%3A%5B%7B%22label%22%3A%22New%22%2C%22queryValue%22%3A%22NEW%22%7D%5D%2C%22regions%22%3A%5B%7B%22queryValue%22%3A%7B%22lat%22%3A40.755322%2C%22lon%22%3A-73.9932872%2C%22rad%22%3A30%7D%7D%5D%2C%22vehicles%22%3A%5B%7B%22label%22%3A%22Kia+Sorento%22%2C%22queryValue%22%3A%7B%22make%22%3A%7B%22id%22%3A19%7D%2C%22model%22%3A%7B%22id%22%3A646%7D%7D%7D%5D%7D&size=50&sort=dealerRank%2Cdesc'
@@ -53,6 +53,8 @@ const urlToCheck = 'https://en.wikipedia.org/wiki/Trademark_symbol'
 // const urlToCheck = 'https://www.schiphol.nl/en/cookies/'
 // const urlToCheck = 'https://www.beatsbydre.com/'
 // const urlToCheck = 'https://www.beatsbydre.com/earphones/powerbeats-pro/anthem-video'
+const urlToCheck = 'https://applitools.com/helloworld'
+
 
 const describeUrl = undefined
 
@@ -67,7 +69,7 @@ describe.only(`URL: ${urlToCheck}`, function () {
       testName: test,
       batchName: test,
       browser: [
-        // {width: 1200, height: 800, name: 'firefox'},
+        {width: 1200, height: 800, name: 'firefox'},
         // {width: 2048, height: 1024, name: 'firefox'},
         // {width: 1900, height: 1800, name: 'firefox'},
         // {width: 1920, height: 1080, name: 'firefox'},
@@ -77,24 +79,22 @@ describe.only(`URL: ${urlToCheck}`, function () {
         {width: 1024, height: 768, name: 'chrome'},
         // {width: 1900, height: 1800, name: 'chrome'},
         // {width: 1500, height: 640, name: 'chrome'},
-        // {width: 1280, height: 1024, name: 'ie'},
+        {width: 1280, height: 1024, name: 'ie'},
+        {width: 1280, height: 1024, name: 'ie10'},
         // {width: 1440, height: 900, name: 'ie'},
         // {width: 1280, height: 1024, name: 'ie10'},
         // {width: 1280, height: 1024, name: 'edge'},
         // {width: 700, height: 500, name: 'edge'},
-        // {width: 800, height: 600, name: 'edge'},
-        //  {deviceName: 'iPhone 6/7/8'},
-        {deviceName: 'iPhone XS'},
-        {deviceName: 'iPhone 6+/7+/8+', screenOrientation: 'landscape'},
-        {deviceName: 'iPhone X', screenOrientation: 'portrait'},
+        {width: 800, height: 600, name: 'edge'},
+         {deviceName: 'iPhone 6/7/8'},
+        // {deviceName: 'iPhone XS'},
+        // {deviceName: 'iPhone 6+/7+/8+', screenOrientation: 'landscape'},
+        // {deviceName: 'iPhone X', screenOrientation: 'portrait'},
         // {deviceName: 'iPhone X', screenOrientation: 'landscape'},
         // {deviceName: 'iPad Pro', screenOrientation: 'portrait'},
         // {deviceName: 'iPad Pro', screenOrientation: 'landscape'},
       ],
     })
-
-
-    cy.scrollTo('bottom')
 
     cy.eyesCheckWindow({tag: '#1:' + urlToCheck, sizeMode: 'full-page', scriptHooks: {
       // beforeCaptureScreenshot: 'document.querySelector("article-modal").style.overflowY = "visible"'
