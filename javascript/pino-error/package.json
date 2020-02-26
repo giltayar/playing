@@ -1,0 +1,62 @@
+{
+  "name": "@applitools/pino-error",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/pino-error.js",
+  "engines": {
+    "node": ">=10.3.0"
+  },
+  "files": [
+    "deployment",
+    "src",
+    "scripts"
+  ],
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "bin": {
+    "run-pino-error": "scripts/run-pino-error.js"
+  },
+  "scripts": {
+    "start": "scripts/run-pino-error.js",
+    "test": "npm run eslint && npm run test:mocha-parallel",
+    "test:mocha": "mocha --no-timeouts --trace-warnings --exit 'test/unit/*.test.js' 'test/it/*.test.js' 'test/e2e/*.test.js'",
+    "test:mocha-parallel": "mocha-parallel-tests --no-timeouts --trace-warnings --exit 'test/unit/*.test.js' 'test/it/*.test.js' 'test/e2e/*.test.js'",
+    "eslint": "eslint '**/*.js'",
+    "build": "#",
+    "postbuild": "npm run dump-dep-versions && npm run build:docker",
+    "dump-dep-versions": "write-dep-versions-to-file deployment/dep-versions.yml",
+    "build:docker": "docker build -t applitools/pino-error --build-arg NPM_FILE=`cat ~/.npmrc` . && docker tag applitools/pino-error applitools/pino-error:${npm_package_version}",
+    "postpublish": "npm run publish:docker",
+    "publish:docker": "docker push applitools/pino-error:${npm_package_version}"
+  },
+  "keywords": [
+    "applitools",
+    "nodejs",
+    "javascript"
+  ],
+  "author": "Gil Tayar <gil.tayar@applitools.com>",
+  "license": "UNLICENSED",
+  "repository": {
+    "url": "https://github.com/applitools/rendering-grid",
+    "type": "git"
+  },
+  "dependencies": {
+    "@applitools/loggly-pino": "^3.1.3",
+    "fastify": "^2.8.0"
+  },
+  "devDependencies": {
+    "@applitools/build-commons": "^1.1.13",
+    "@applitools/docker-compose-mocha": "^1.4.0",
+    "@applitools/docker-compose-testkit": "^1.1.2",
+    "@applitools/http-commons": "^2.3.12",
+    "chai": "^4.2.0",
+    "eslint": "^6.4.0",
+    "eslint-plugin-mocha-no-only": "^1.1.0",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "mocha": "^6.2.0",
+    "mocha-parallel-tests": "^2.2.2",
+    "prettier": "^1.18.2"
+  }
+}

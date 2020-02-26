@@ -1,0 +1,8 @@
+version: '3'
+services:
+  app:
+    image: applitools/pino-error
+    ports:
+      - 80
+    # environment:
+    #   - FOO: "bar"
