@@ -3,18 +3,18 @@ import {AsyncLocalStorage} from 'async_hooks'
 const asyncLocalStorage = new AsyncLocalStorage()
 
 async function main() {
-  console.log(`*********** outside`, {}) //@@@GIL
+  console.log(`*********** outside`, {})
 
   const store = {}
   const returnValue = await asyncLocalStorage.runSyncAndReturn(store, async () => {
     await foo()
 
-    console.log(`*********** inside, after calling foo`, {store}) //@@@GIL
+    console.log(`*********** inside, after calling foo`, {store})
 
     return 55
   })
 
-  console.log(`*********** outside again`, {returnValue}) //@@@GIL
+  console.log(`*********** outside again`, {returnValue})
 }
 
 async function foo() {
