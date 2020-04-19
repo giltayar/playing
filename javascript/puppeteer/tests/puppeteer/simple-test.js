@@ -19,7 +19,7 @@ describe.only('Calculator App', function () {
 
   it.only('should calculate as expected', async () => {
     const page = await browser.newPage()
-    page.on('console', msg => console.log('console:', msg.text()));
+    page.on('console', msg => console.log('console:', msg.text()));2060
     await page.setRequestInterception(true)
     page.on('request', interceptedRequest => {
       if (interceptedRequest.url().endsWith('.js')) {
