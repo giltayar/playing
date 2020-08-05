@@ -38,7 +38,7 @@
   "dependencies": {
     "@applitools/functional-commons": "^1.0.18",
     "debug": "^3.1.0",
-    "fastify": "^1.9.0",
+    "fastify": "^2.15.1",
     "node-fetch": "^2.2.0",
     "p-retry": "^2.0.0",
     "stats-lite": "^2.1.1",
