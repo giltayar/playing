@@ -12,6 +12,6 @@
   "dependencies": {
     "@applitools/http-commons": "^1.2.9",
     "express": "^4.16.4",
-    "node-fetch": "^2.3.0"
+    "node-fetch": "^2.6.7"
   }
 }
