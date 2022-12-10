@@ -11,7 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "@applitools/http-commons": "^1.2.9",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "node-fetch": "^2.3.0"
   }
 }
