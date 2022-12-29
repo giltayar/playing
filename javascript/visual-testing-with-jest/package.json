@@ -12,7 +12,7 @@
   "devDependencies": {
     "chromedriver": "^2.34.0",
     "eyes.selenium": "0.0.75",
-    "jest": "^22.0.3",
+    "jest": "^29.3.1",
     "selenium-webdriver": "^3.6.0"
   }
 }
